@@ -475,8 +475,8 @@ hopit.control<-function(grad.eps = 3e-5,
 #' i.e., the main latent effects must be specified in the latent formula, and the main threshold effect must be speciffied in the threshold formula.
 #' See also \code{Example 3} below.\cr
 #'
-#' For more details, please see the package vignette: "introduction_to_hopit", which is also available under this link:
-#' \href{https://github.com/MaciejDanko/hopit/blob/master/vignettes/introduction_to_hopit.pdf}{introduction_to_hopit.pdf}
+#' For more details, please see the package vignette, which is also available under this link:
+#' \href{https://github.com/MaciejDanko/hopit/blob/master/vignettes/vig_hopit.pdf}{vig_hopit.pdf}
 #'
 #' @param latent.formula a formula used to model the latent variable. It should not contain any threshold variable.
 #' To specify the interactions between the latent and the threshold variables, see details.
@@ -501,6 +501,7 @@ hopit.control<-function(grad.eps = 3e-5,
 #' values from the \code{data}. Using \code{\link[stats]{na.pass}} will lead to an error.
 #' @importFrom stats na.fail
 #' @importFrom stats sigma
+#' @importFrom stats model.frame
 #' @importFrom stats coef
 #' @importFrom Rdpack reprompt
 #' @return a \code{hopit} object used by other functions and methods. The object is a list with the following components:
@@ -509,6 +510,7 @@ hopit.control<-function(grad.eps = 3e-5,
 #'  \item{hasdisp}{ a logical indicating whether fit.sigma was modeled.}
 #'  \item{use.weights}{ a logical indicating whether any weights were used.}
 #'  \item{weights}{ a vector with model weights.}
+#'  \item{frame}{ a model frame.}
 #'  \item{latent.formula}{ a latent formula used to fit the model.}
 #'  \item{latent.mm}{ a latent model matrix.}
 #'  \item{latent.terms}{ latent variables used, and their interactions.}
@@ -775,6 +777,7 @@ hopit<- function(latent.formula,
   if (missing(decreasing.levels)) decreasing.levels = NULL
   check_decreasing.levels(decreasing.levels, levels(model$y_i))
   if (!decreasing.levels) model$y_i <- factor(model$y_i, rev(levels(model$y_i)))
+  model$decreasing.levels <- decreasing.levels
   model$y_latent_i <- NA # latent
   model$Ey_i <- NA # ordinal classified utput
   model$J <- length(levels(model$y_i))
@@ -817,6 +820,9 @@ hopit<- function(latent.formula,
   model$weights <- as.vector(matrix(model$weights, 1L, model$N))
   #scaling weights
   model$weights <- model$N * model$weights / sum(model$weights)
+
+  model$frame <- cbind.data.frame(stats::model.frame(latent.formula, data),
+                                  stats::model.frame(thresh.formula, data))
 
   #calculate special matrices for gradient calaculation
   model <- calcYYY(model)
