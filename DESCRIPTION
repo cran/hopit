@@ -2,10 +2,10 @@ Package: hopit
 Type: Package
 Title: Hierarchical Ordered Probit Models with Application to Reporting
         Heterogeneity
-Version: 0.11.4
+Version: 0.11.5
 Depends: R (>= 3.5.0), survey (>= 4.1-1)
-Imports: MASS, Rcpp, Matrix, graphics, stats, grDevices, questionr,
-        parallel, Rdpack (>= 0.11.0)
+Imports: MASS, Rcpp, graphics, stats, grDevices, questionr, parallel,
+        Rdpack (>= 0.11.0)
 LinkingTo: Rcpp, RcppEigen
 Authors@R: person("Maciej J.", "Danko", role = c("aut", "cre"), 
  email = "Maciej.Danko@gmail.com", comment = c(ORCID = "0000-0002-7924-9022"))
@@ -21,8 +21,8 @@ VignetteBuilder: R.rsp, knitr
 RdMacros: Rdpack
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2022-09-27 13:10:58 UTC; maciej
+Packaged: 2022-10-01 09:40:37 UTC; maciej
 Author: Maciej J. Danko [aut, cre] (<https://orcid.org/0000-0002-7924-9022>)
 Maintainer: Maciej J. Danko <Maciej.Danko@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-09-28 23:00:02 UTC
+Date/Publication: 2022-10-01 14:00:05 UTC
