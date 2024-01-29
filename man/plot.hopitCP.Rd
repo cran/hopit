@@ -34,8 +34,6 @@
 \item{group.labels.type}{a position of the legend. One of \code{middle}, \code{border}, or \code{none}.}
 
 \item{...}{further plotting arguments.}
-
-\item{plotf}{a logical indicating whether to plot the results.}
 }
 \description{
 Plotting Cut-Points

@@ -1,3 +1,8 @@
+# hopit v0.11.6 (Release date: 2024-01-28)
+
+Bug fixes:
+-  corrections to rd files
+
 # hopit v0.11.5 (Release date: 2022-10-01)
 
 Changes:

@@ -11,12 +11,10 @@
 
 \item{robust.se}{a logical indicating whether to use robust standard errors based
 on the sandwich estimator.
-If a survey design is detected, then this option is ignored.}
+If a survey design is detected, then this option is ignored.
+See \code{\link{hopit.control}}.}
 
 \item{...}{further arguments passed to or from other methods.}
-
-\item{control}{a list with control parameters.
-See \code{\link{hopit.control}}.}
 }
 \description{
 Summarize a \code{hopit}  model.

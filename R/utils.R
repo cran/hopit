@@ -153,7 +153,7 @@ classify.ind<-function(model){
 
 #' @keywords internal
 #' @noRd
-sort.terms <- function(x) {
+sort_terms <- function(x) {
   tmp <- decomposeinteractions(x)
   tmp <-lapply(tmp, sort)
   sapply(tmp, paste, collapse=':')
@@ -199,9 +199,9 @@ start_glm<-function(object, data){
     gl$coef
   })
 
-  st.cn.l.mm <- sort.terms(colnames(object$latent.mm))
-  st.cn.t.mm <- sort.terms(colnames(object$thresh.mm))
-  st.cn.res  <- sort.terms(rownames(res))
+  st.cn.l.mm <- sort_terms(colnames(object$latent.mm))
+  st.cn.t.mm <- sort_terms(colnames(object$thresh.mm))
+  st.cn.res  <- sort_terms(rownames(res))
   lind <- which(st.cn.res %in% st.cn.l.mm)
   glm.lambda <- res[which(grepl('Intercept',rownames(res))),]
 

@@ -43,11 +43,11 @@ is omitted and only the BFGS and/or the CG methods are run.}
 \item{transform.latent, transform.thresh}{a type of transformation applied to
 the all of the latent's or all of the threshold's numeric variables. Possible values:
 \itemize{
-\item{"none"} {- no transformation}
-\item{"min"} {- subtract the minimum from a variable}
-\item{"scale_01"} {- transform the variable to fit the range from 0 to 1}
-\item{"standardize" or "standardise"} {- subtract the mean from a variable then divide it by it's standard deviation}
-\item{"standardize_trunc" or "standardise_trunc"} {- subtract the minimum from a variable then divide it by it's standard deviation}
+\item "none" : no transformation
+\item "min" : subtract the minimum from a variable
+\item "scale_01" : transform the variable to fit the range from 0 to 1
+\item "standardize" or "standardise" : subtract the mean from a variable then divide it by its standard deviation
+\item "standardize_trunc" or "standardise_trunc" : subtract the minimum from a variable then divide it by its standard deviation
 }}
 }
 \description{

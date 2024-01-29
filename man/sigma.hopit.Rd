@@ -7,7 +7,7 @@
 \method{sigma}{hopit}(object, ...)
 }
 \arguments{
-\item{model}{a fitted \code{hopit} model.}
+\item{object}{a fitted \code{hopit} model.}
 }
 \description{
 Extract the \code{Sigma} parameter from a \code{hopit} model

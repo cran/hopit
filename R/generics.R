@@ -117,7 +117,7 @@ print.vcov.hopit <- function(x, digits = 3L, ...){
 #' @param robust.se a logical indicating whether to use robust standard errors based
 #' on the sandwich estimator.
 #' If a survey design is detected, then this option is ignored.
-#' @param control a list with control parameters.
+# @param control a list with control parameters.
 #' See \code{\link{hopit.control}}.
 #' @param ... further arguments passed to or from other methods.
 #' @export
@@ -317,7 +317,7 @@ summary.hopitHI <- function(object, breaks = seq(0,1,length.out = 21), ...){
 #' @export
 #' @method plot hopitCP
 #' @param decreasing.levels a logical indicating whether self-reported health classes are ordered in decreasing order.
-#' @param plotf a logical indicating whether to plot the results.
+# @param plotf a logical indicating whether to plot the results.
 #' @param XLab,XLab.cex a label of the x axis and it's size.
 #' @param YLab,YLab.cex a label of the y axis and it's size.
 #' @param border.lwd,border.lty,border.col graphic parameters for vertical lines used to plot cut-points.
@@ -900,7 +900,7 @@ print.profile.hopit<-function(x, ..., plotf = TRUE){
 #' Extract the \code{Sigma} parameter from a \code{hopit} model
 #'
 #' Extract the \code{Sigma} parameter from a \code{hopit} model
-#' @param model a fitted \code{hopit} model.
+#' @param object a fitted \code{hopit} model.
 #' @usage \method{sigma}{hopit}(object, ...)
 #' @keywords internal
 #' @export
